@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://dcvlysnphb3ci"]
 
+[ext_resource type="Script" uid="uid://hhl2uxxgnf6k" path="res://scripts/main.gd" id="1_c6pm6"]
 [ext_resource type="Texture2D" uid="uid://0h86ip6ey66c" path="res://assets/vertex player.png" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://dmf3d33ei8gno" path="res://assets/buttons/skip/normal255.png" id="2_choun"]
 [ext_resource type="Texture2D" uid="uid://bk7aaq5eik87p" path="res://assets/buttons/skip/pressed150.png" id="3_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://xbgkm6rgb3ge" path="res://assets/buttons/skip/hovered100.png" id="4_eb6dy"]
+[ext_resource type="BitMap" uid="uid://cbp1urlswgcvf" path="res://assets/buttons/skip/normalBitmap.png" id="5_5q0nq"]
 [ext_resource type="Texture2D" uid="uid://cgt1ijqk7d0fj" path="res://assets/buttons/pauseplay/normal255.png" id="5_trceg"]
 [ext_resource type="Texture2D" uid="uid://deh57vmblwef0" path="res://assets/buttons/pauseplay/pressed150.png" id="6_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://dars3ff2yy8lt" path="res://assets/buttons/pauseplay/hovered100.png" id="7_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://bdi12j1n415ci" path="res://assets/buttons/back/normal255.png" id="8_jbj1t"]
+[ext_resource type="BitMap" uid="uid://cerc5ggqmka2h" path="res://assets/buttons/pauseplay/normalBitmap.png" id="9_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://yx54ouxb0hli" path="res://assets/buttons/back/pressed150.png" id="9_muem4"]
 [ext_resource type="Texture2D" uid="uid://43ikkkgkfw71" path="res://assets/buttons/back/hovered100.png" id="10_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://ddoneqv6g1v6p" path="res://assets/buttons/middle/normal.png" id="11_trceg"]
+[ext_resource type="BitMap" uid="uid://c0uej0fjg8pra" path="res://assets/buttons/back/normalBitmap.png" id="11_vxglm"]
 [ext_resource type="Texture2D" uid="uid://j4mvrtey0c8d" path="res://assets/buttons/middle/pressed.png" id="12_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://b3voghqq557hr" path="res://assets/buttons/middle/hovered.png" id="13_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://cgkacg0c7rdwx" path="res://assets/buttons/right/normal170.png" id="14_2wyq8"]
@@ -19,108 +23,177 @@
 [ext_resource type="Texture2D" uid="uid://dr81b5a6l6pec" path="res://assets/buttons/right/pressed200.png" id="15_vxglm"]
 [ext_resource type="Texture2D" uid="uid://doi7oq6t7hxw" path="res://assets/buttons/right/hovered99.png" id="16_2f3dj"]
 [ext_resource type="Texture2D" uid="uid://dusc3r5omeiwu" path="res://assets/buttons/left/hovered99.png" id="16_dp3eg"]
+[ext_resource type="BitMap" uid="uid://blgf174potiw7" path="res://assets/buttons/left/normalBitmap.png" id="17_j8jky"]
 [ext_resource type="Texture2D" uid="uid://bsmy2g87qy6br" path="res://assets/buttons/up/normal170.png" id="17_yq6so"]
 [ext_resource type="Texture2D" uid="uid://bji4vlc3dv4q1" path="res://assets/buttons/up/pressed200.png" id="18_fv21b"]
 [ext_resource type="Texture2D" uid="uid://eoo4g58ge1pq" path="res://assets/buttons/up/hovered99.png" id="19_tel4y"]
 [ext_resource type="Texture2D" uid="uid://b5kvf0b8nirya" path="res://assets/buttons/down/normal170.png" id="20_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://c7nemg052117v" path="res://assets/buttons/down/pressed.png" id="21_5q0nq"]
+[ext_resource type="BitMap" uid="uid://dy2fs80374ibx" path="res://assets/buttons/right/normalBitmap.png" id="21_kmb1v"]
 [ext_resource type="Texture2D" uid="uid://dta6g8n6evt6t" path="res://assets/buttons/down/hovered99.png" id="22_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://bn0c365ojxsx3" path="res://assets/x.png" id="23_j8jky"]
+[ext_resource type="BitMap" uid="uid://cnevhayrq735t" path="res://assets/buttons/down/normalBitmap.png" id="24_2f3dj"]
+[ext_resource type="BitMap" uid="uid://cb05ypebqlfmn" path="res://assets/buttons/up/normalBitmap.png" id="25_fuf3a"]
+[ext_resource type="BitMap" uid="uid://dbarxjw1h74cr" path="res://assets/buttons/middle/normalBitmap.png" id="34_dgi5k"]
+[ext_resource type="Texture2D" uid="uid://cgvs14sp6dyu6" path="res://assets/screenBack.png" id="35_j8jky"]
+[ext_resource type="PackedScene" uid="uid://d4cf1gqkmkbdt" path="res://scenes/boot_menu.tscn" id="36_kmb1v"]
+[ext_resource type="PackedScene" uid="uid://ct6wqubgrc4ty" path="res://scenes/menu_browser.tscn" id="36_pibwh"]
+[ext_resource type="PackedScene" uid="uid://dgx52m3fiqkda" path="res://scenes/play_bar.tscn" id="37_fuf3a"]
+[ext_resource type="PackedScene" uid="uid://cyqi20kbnqtc8" path="res://scenes/song_menu.tscn" id="38_5he1u"]
+[ext_resource type="PackedScene" uid="uid://bap6jsn17bu0" path="res://scenes/artists_menu.tscn" id="41_5poiv"]
+[ext_resource type="AudioStream" uid="uid://bctjuxywa1s8l" path="res://audio/imported/FADE.mp3" id="42_2cjbq"]
 
 [node name="main" type="Node2D" unique_id=1300920803]
+script = ExtResource("1_c6pm6")
 
 [node name="back" type="TextureRect" parent="." unique_id=1614240972]
-offset_left = -250.00003
-offset_top = -100.000015
-offset_right = 1750.0
-offset_bottom = 1900.0
-scale = Vector2(0.5, 0.5)
+self_modulate = Color(0.98432404, 0.5559076, 0.26756448, 1)
+offset_right = 2000.0
+offset_bottom = 3200.0
+scale = Vector2(0.25, 0.2)
 texture = ExtResource("1_o5qli")
 
 [node name="skipButton" type="TextureButton" parent="." unique_id=1219037707]
 offset_left = 320.0
-offset_top = 670.0
+offset_top = 518.00006
 offset_right = 1016.0
-offset_bottom = 1120.0
+offset_bottom = 968.00006
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("2_choun")
 texture_pressed = ExtResource("3_ya4ey")
 texture_hover = ExtResource("4_eb6dy")
+texture_click_mask = ExtResource("5_5q0nq")
 
 [node name="pauseButton" type="TextureButton" parent="." unique_id=26864407]
 offset_left = 178.99998
-offset_top = 670.0
+offset_top = 518.00006
 offset_right = 883.0
-offset_bottom = 1120.0
+offset_bottom = 968.00006
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("5_trceg")
 texture_pressed = ExtResource("6_a8y0u")
 texture_hover = ExtResource("7_jkv2x")
+texture_click_mask = ExtResource("9_dgi5k")
 
 [node name="backButton" type="TextureButton" parent="." unique_id=1707781359]
-offset_left = 40.000004
-offset_top = 670.0
+offset_left = 40.0
+offset_top = 518.00006
 offset_right = 736.0
-offset_bottom = 1120.0
+offset_bottom = 968.00006
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("8_jbj1t")
 texture_pressed = ExtResource("9_muem4")
 texture_hover = ExtResource("10_dp3eg")
+texture_click_mask = ExtResource("11_vxglm")
 
 [node name="leftButton" type="TextureButton" parent="." unique_id=1624809535]
-offset_left = 107.00001
-offset_top = 403.70004
+visible = false
+offset_left = 107.0
+offset_top = 419.7001
 offset_right = 650.0
-offset_bottom = 1486.7001
+offset_bottom = 1502.7001
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("14_jbj1t")
 texture_pressed = ExtResource("15_muem4")
 texture_hover = ExtResource("16_dp3eg")
+texture_click_mask = ExtResource("17_j8jky")
 
 [node name="rightButton" type="TextureButton" parent="." unique_id=1935504893]
+visible = false
 offset_left = 296.0
-offset_top = 403.7
+offset_top = 419.69998
 offset_right = 839.0
-offset_bottom = 1486.7
+offset_bottom = 1502.7
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("14_2wyq8")
 texture_pressed = ExtResource("15_vxglm")
 texture_hover = ExtResource("16_2f3dj")
+texture_click_mask = ExtResource("21_kmb1v")
 
 [node name="upButton" type="TextureButton" parent="." unique_id=6577000]
+visible = false
 offset_left = 154.2
-offset_top = 362.50003
+offset_top = 378.50003
 offset_right = 1172.2
-offset_bottom = 893.5
+offset_bottom = 909.5
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("17_yq6so")
 texture_pressed = ExtResource("18_fv21b")
 texture_hover = ExtResource("19_tel4y")
+texture_click_mask = ExtResource("25_fuf3a")
 
 [node name="downButton" type="TextureButton" parent="." unique_id=174984098]
+visible = false
 offset_left = 154.2
-offset_top = 555.00006
+offset_top = 571.0
 offset_right = 1172.2
-offset_bottom = 1086.0
+offset_bottom = 1102.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("20_qkpxi")
 texture_pressed = ExtResource("21_5q0nq")
 texture_hover = ExtResource("22_dgi5k")
+texture_click_mask = ExtResource("24_2f3dj")
 
 [node name="xTexture" type="TextureRect" parent="." unique_id=831062655]
+visible = false
 offset_left = 151.99998
-offset_top = 401.99997
+offset_top = 418.00003
 offset_right = 1190.0
-offset_bottom = 1503.0
+offset_bottom = 1519.0
 scale = Vector2(0.2, 0.2)
+mouse_filter = 2
 texture = ExtResource("23_j8jky")
 
 [node name="middleButton" type="TextureButton" parent="." unique_id=1998542503]
+visible = false
 offset_left = 196.0
-offset_top = 452.00003
+offset_top = 468.00003
 offset_right = 796.0
-offset_bottom = 1052.0
+offset_bottom = 1068.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("11_trceg")
 texture_pressed = ExtResource("12_a8y0u")
 texture_hover = ExtResource("13_jkv2x")
+texture_click_mask = ExtResource("34_dgi5k")
+
+[node name="screenBackTexture" type="TextureRect" parent="." unique_id=1560300328]
+offset_left = 25.0
+offset_top = 16.0
+offset_right = 1825.0
+offset_bottom = 1416.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("35_j8jky")
+
+[node name="referenceLine" type="Line2D" parent="." unique_id=1464967214]
+visible = false
+position = Vector2(0, -32)
+points = PackedVector2Array(250, 24, 250, -8)
+width = 1.0
+
+[node name="referenceRect" type="ColorRect" parent="." unique_id=285009757]
+visible = false
+offset_left = 37.0
+offset_top = 28.0
+offset_right = 463.0
+offset_bottom = 354.0
+
+[node name="menuBrowser" parent="." unique_id=1149539733 instance=ExtResource("36_pibwh")]
+position = Vector2(37, 28)
+
+[node name="songMenu" parent="." unique_id=2133010042 instance=ExtResource("38_5he1u")]
+visible = false
+position = Vector2(37, 28)
+
+[node name="playBar" parent="." unique_id=1701627100 instance=ExtResource("37_fuf3a")]
+position = Vector2(37, 290)
+
+[node name="bootMenu" parent="." unique_id=1752523285 instance=ExtResource("36_kmb1v")]
+visible = false
+position = Vector2(37, 28)
+
+[node name="artistsMenu" parent="." unique_id=7582608 instance=ExtResource("41_5poiv")]
+visible = false
+position = Vector2(37, 28)
+
+[node name="audioPlayer" type="AudioStreamPlayer" parent="." unique_id=1349753027]
+stream = ExtResource("42_2cjbq")

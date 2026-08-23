@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://chssuvie76ae4"]
+
+[ext_resource type="FontFile" uid="uid://ca8x3wev4othp" path="res://assets/fonts/Science_Gothic/static/ScienceGothic_SemiExpanded-Light.ttf" id="1_t5ptn"]
+
+[sub_resource type="Gradient" id="Gradient_1kgfj"]
+offsets = PackedFloat32Array(0, 0.70481926)
+colors = PackedColorArray(0.17684305, 0.11448232, 0.5758643, 1, 0.40392157, 0.003921569, 0.9372549, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d8fr4"]
+gradient = SubResource("Gradient_1kgfj")
+width = 256
+height = 256
+fill_to = Vector2(0, 1)
+
+[node name="reference" type="Node2D" unique_id=1149539733]
+
+[node name="back" type="TextureRect" parent="." unique_id=1728139325]
+offset_right = 426.0
+offset_bottom = 326.0
+texture = SubResource("GradientTexture2D_d8fr4")
+metadata/_edit_use_anchors_ = true
+
+[node name="header" type="Label" parent="." unique_id=423135677]
+offset_left = 25.0
+offset_top = 48.0
+offset_right = 401.0
+offset_bottom = 111.0
+theme_override_fonts/font = ExtResource("1_t5ptn")
+theme_override_font_sizes/font_size = 42
+text = "vertex PLAYER"
+metadata/_edit_use_anchors_ = true
+
+[node name="referenceLine" type="Line2D" parent="." unique_id=1465055675]
+position = Vector2(0, -1)
+points = PackedVector2Array(213, 0, 213, -48)
+width = 1.0

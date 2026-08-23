@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://bap6jsn17bu0"]
+
+[ext_resource type="Texture2D" uid="uid://5w1tfythtfnd" path="res://assets/gradients/generalBack.tres" id="1_7kmqv"]
+[ext_resource type="Texture2D" uid="uid://eohqwb241oer" path="res://assets/buttons/bar/normal.png" id="2_gfo3i"]
+[ext_resource type="Texture2D" uid="uid://c1p6tm8kq56gr" path="res://assets/buttons/bar/pressed.png" id="3_4rmvd"]
+[ext_resource type="Texture2D" uid="uid://cu6vf4kb2u876" path="res://assets/buttons/bar/hovered.png" id="4_acw0c"]
+[ext_resource type="Texture2D" uid="uid://blg2ejipiirui" path="res://assets/artistIcon.png" id="5_ovuyp"]
+[ext_resource type="Script" uid="uid://cyj7301efrabb" path="res://scripts/home_button.gd" id="7_s1r1e"]
+[ext_resource type="Texture2D" uid="uid://pwys1kalend3" path="res://assets/homeIcon.png" id="8_mhuq1"]
+
+[node name="artistsMenu" type="Node2D" unique_id=2133010042]
+
+[node name="back" type="TextureRect" parent="." unique_id=1143867301]
+offset_right = 426.0
+offset_bottom = 326.0
+texture = ExtResource("1_7kmqv")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="." unique_id=2037143252]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 426.0
+offset_bottom = 326.0
+
+[node name="scrollContainer" type="ScrollContainer" parent="Control" unique_id=1996721943]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 72.0
+offset_right = 413.0
+offset_bottom = 313.0
+
+[node name="verticalBoxCont" type="VBoxContainer" parent="Control/scrollContainer" unique_id=1911375264]
+layout_mode = 2
+
+[node name="optionButton1" type="TextureButton" parent="Control/scrollContainer/verticalBoxCont" unique_id=961226290]
+layout_mode = 2
+texture_normal = ExtResource("2_gfo3i")
+texture_pressed = ExtResource("3_4rmvd")
+texture_hover = ExtResource("4_acw0c")
+
+[node name="icon" type="TextureRect" parent="Control/scrollContainer/verticalBoxCont/optionButton1" unique_id=1488224426]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_ovuyp")
+
+[node name="optionLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/optionButton1" unique_id=1187592675]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 15.0
+offset_right = 307.0
+offset_bottom = 38.0
+text = "Artist 1"
+
+[node name="optionButton2" type="TextureButton" parent="Control/scrollContainer/verticalBoxCont" unique_id=1342942750]
+layout_mode = 2
+texture_normal = ExtResource("2_gfo3i")
+texture_pressed = ExtResource("3_4rmvd")
+texture_hover = ExtResource("4_acw0c")
+
+[node name="icon" type="TextureRect" parent="Control/scrollContainer/verticalBoxCont/optionButton2" unique_id=228494303]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_ovuyp")
+
+[node name="optionLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/optionButton2" unique_id=1744172132]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 15.0
+offset_right = 307.0
+offset_bottom = 38.0
+text = "Artist 2"
+
+[node name="homeButton" type="TextureButton" parent="." unique_id=725129755]
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 413.0
+offset_bottom = 68.0
+texture_normal = ExtResource("2_gfo3i")
+texture_pressed = ExtResource("3_4rmvd")
+texture_hover = ExtResource("4_acw0c")
+script = ExtResource("7_s1r1e")
+
+[node name="icon" type="TextureRect" parent="homeButton" unique_id=1105058230]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_mhuq1")
+
+[node name="optionLabel" type="Label" parent="homeButton" unique_id=2001404624]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 15.0
+offset_right = 307.0
+offset_bottom = 38.0
+text = "Home"
+
+[node name="referenceLine" type="Line2D" parent="." unique_id=450330744]
+visible = false
+position = Vector2(0, -1)
+points = PackedVector2Array(213, 0, 213, -48)
+width = 1.0
+
+[connection signal="pressed" from="homeButton" to="homeButton" method="_on_pressed"]

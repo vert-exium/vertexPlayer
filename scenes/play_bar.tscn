@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dgx52m3fiqkda"]
+
+[ext_resource type="FontFile" uid="uid://cvlh806lqelfs" path="res://assets/fonts/Elms_Sans/static/ElmsSans-Light.ttf" id="1_6fyds"]
+
+[sub_resource type="Gradient" id="Gradient_fniae"]
+offsets = PackedFloat32Array(0, 0.85542166)
+colors = PackedColorArray(0.6378432, 0.6378432, 0.63784313, 1, 0.8862618, 0.88626146, 0.8862616, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6fyds"]
+gradient = SubResource("Gradient_fniae")
+width = 256
+height = 512
+fill_from = Vector2(0, 0.013043478)
+fill_to = Vector2(0, 1)
+
+[node name="playBar" type="Node2D" unique_id=1701627100]
+
+[node name="referenceLine" type="Line2D" parent="." unique_id=942518795]
+visible = false
+position = Vector2(0, -1)
+points = PackedVector2Array(213, 0, 213, -48)
+width = 1.0
+
+[node name="backRect" type="TextureRect" parent="." unique_id=730646024]
+offset_right = 426.0
+offset_bottom = 80.0
+scale = Vector2(1, 0.125)
+texture = SubResource("GradientTexture2D_6fyds")
+
+[node name="songLabel" type="Label" parent="." unique_id=631222173]
+offset_left = 72.0
+offset_top = 8.0
+offset_right = 256.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6fyds")
+theme_override_font_sizes/font_size = 18
+text = "No Song Playing"
+
+[node name="artistLabel" type="Label" parent="." unique_id=914611978]
+offset_left = 72.0
+offset_top = 32.0
+offset_right = 208.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.25565878, 0.25565878, 0.25565878, 1)
+theme_override_fonts/font = ExtResource("1_6fyds")
+theme_override_font_sizes/font_size = 10
+text = "No Artist"
+
+[node name="coverRect" type="TextureRect" parent="." unique_id=1519199790]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
