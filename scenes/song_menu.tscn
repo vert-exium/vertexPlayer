@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cyqi20kbnqtc8"]
 
+[ext_resource type="Script" uid="uid://ux3sv0tloino" path="res://scripts/song_menu.gd" id="1_1sxsb"]
 [ext_resource type="Texture2D" uid="uid://5w1tfythtfnd" path="res://assets/gradients/generalBack.tres" id="1_rwbxv"]
 [ext_resource type="Texture2D" uid="uid://eohqwb241oer" path="res://assets/buttons/bar/normal.png" id="2_1sxsb"]
 [ext_resource type="Texture2D" uid="uid://c1p6tm8kq56gr" path="res://assets/buttons/bar/pressed.png" id="3_b633c"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://pwys1kalend3" path="res://assets/homeIcon.png" id="8_s1k4u"]
 
 [node name="songMenu" type="Node2D" unique_id=2133010042]
+script = ExtResource("1_1sxsb")
 
 [node name="back" type="TextureRect" parent="." unique_id=1143867301]
 offset_right = 426.0
@@ -39,6 +41,7 @@ texture_pressed = ExtResource("3_b633c")
 texture_hover = ExtResource("4_17x7w")
 
 [node name="icon" type="TextureRect" parent="Control/scrollContainer/verticalBoxCont/optionButton1" unique_id=1488224426]
+custom_minimum_size = Vector2(113, 113)
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
@@ -46,37 +49,25 @@ offset_right = 50.0
 offset_bottom = 50.0
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_nxpsv")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="optionLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/optionButton1" unique_id=1187592675]
 layout_mode = 0
 offset_left = 59.0
-offset_top = 15.0
+offset_top = 7.0
 offset_right = 307.0
-offset_bottom = 38.0
+offset_bottom = 30.0
 text = "Song 1"
 
-[node name="optionButton2" type="TextureButton" parent="Control/scrollContainer/verticalBoxCont" unique_id=1342942750]
-layout_mode = 2
-texture_normal = ExtResource("2_1sxsb")
-texture_pressed = ExtResource("3_b633c")
-texture_hover = ExtResource("4_17x7w")
-
-[node name="icon" type="TextureRect" parent="Control/scrollContainer/verticalBoxCont/optionButton2" unique_id=228494303]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 50.0
-offset_bottom = 50.0
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_nxpsv")
-
-[node name="optionLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/optionButton2" unique_id=1744172132]
+[node name="artistLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/optionButton1" unique_id=565614222]
 layout_mode = 0
 offset_left = 59.0
-offset_top = 15.0
+offset_top = 31.0
 offset_right = 307.0
-offset_bottom = 38.0
-text = "Song 2"
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 10
+text = "Artist 1"
 
 [node name="homeButton" type="TextureButton" parent="." unique_id=725129755]
 offset_left = 13.0

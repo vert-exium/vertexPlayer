@@ -24,6 +24,8 @@ Global="*uid://d00odqdpxstha"
 window/size/viewport_width=500
 window/size/viewport_height=640
 window/size/transparent=true
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
 
 [physics]
 

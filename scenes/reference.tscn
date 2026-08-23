@@ -31,6 +31,7 @@ text = "vertex PLAYER"
 metadata/_edit_use_anchors_ = true
 
 [node name="referenceLine" type="Line2D" parent="." unique_id=1465055675]
+visible = false
 position = Vector2(0, -1)
 points = PackedVector2Array(213, 0, 213, -48)
 width = 1.0

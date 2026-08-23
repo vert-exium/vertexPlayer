@@ -1,12 +1,10 @@
 extends Node2D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$bootMenu.visible = true
 	Global.returnHome.connect(_returnHomeFunction)
 	Global.doneLoading.connect(_hideLoading)
-	Global.openArtistsMenu
 	Global.openSongMenu.connect(_showSongMenu)
 	Global.openArtistsMenu.connect(_showArtistsMenu)
 
