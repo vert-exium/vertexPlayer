@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://dcvlysnphb3ci"]
+
+[ext_resource type="Texture2D" uid="uid://0h86ip6ey66c" path="res://assets/vertex player.png" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://dmf3d33ei8gno" path="res://assets/buttons/skip/normal255.png" id="2_choun"]
+[ext_resource type="Texture2D" uid="uid://bk7aaq5eik87p" path="res://assets/buttons/skip/pressed150.png" id="3_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://xbgkm6rgb3ge" path="res://assets/buttons/skip/hovered100.png" id="4_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://cgt1ijqk7d0fj" path="res://assets/buttons/pauseplay/normal255.png" id="5_trceg"]
+[ext_resource type="Texture2D" uid="uid://deh57vmblwef0" path="res://assets/buttons/pauseplay/pressed150.png" id="6_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://dars3ff2yy8lt" path="res://assets/buttons/pauseplay/hovered100.png" id="7_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://bdi12j1n415ci" path="res://assets/buttons/back/normal255.png" id="8_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://yx54ouxb0hli" path="res://assets/buttons/back/pressed150.png" id="9_muem4"]
+[ext_resource type="Texture2D" uid="uid://43ikkkgkfw71" path="res://assets/buttons/back/hovered100.png" id="10_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://ddoneqv6g1v6p" path="res://assets/buttons/middle/normal.png" id="11_trceg"]
+[ext_resource type="Texture2D" uid="uid://j4mvrtey0c8d" path="res://assets/buttons/middle/pressed.png" id="12_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://b3voghqq557hr" path="res://assets/buttons/middle/hovered.png" id="13_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://cgkacg0c7rdwx" path="res://assets/buttons/right/normal170.png" id="14_2wyq8"]
+[ext_resource type="Texture2D" uid="uid://bwco240ne7up3" path="res://assets/buttons/left/normal170.png" id="14_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://betiqmlw7mi8o" path="res://assets/buttons/left/pressed200.png" id="15_muem4"]
+[ext_resource type="Texture2D" uid="uid://dr81b5a6l6pec" path="res://assets/buttons/right/pressed200.png" id="15_vxglm"]
+[ext_resource type="Texture2D" uid="uid://doi7oq6t7hxw" path="res://assets/buttons/right/hovered99.png" id="16_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://dusc3r5omeiwu" path="res://assets/buttons/left/hovered99.png" id="16_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://bsmy2g87qy6br" path="res://assets/buttons/up/normal170.png" id="17_yq6so"]
+[ext_resource type="Texture2D" uid="uid://bji4vlc3dv4q1" path="res://assets/buttons/up/pressed200.png" id="18_fv21b"]
+[ext_resource type="Texture2D" uid="uid://eoo4g58ge1pq" path="res://assets/buttons/up/hovered99.png" id="19_tel4y"]
+[ext_resource type="Texture2D" uid="uid://b5kvf0b8nirya" path="res://assets/buttons/down/normal170.png" id="20_qkpxi"]
+[ext_resource type="Texture2D" uid="uid://c7nemg052117v" path="res://assets/buttons/down/pressed.png" id="21_5q0nq"]
+[ext_resource type="Texture2D" uid="uid://dta6g8n6evt6t" path="res://assets/buttons/down/hovered99.png" id="22_dgi5k"]
+[ext_resource type="Texture2D" uid="uid://bn0c365ojxsx3" path="res://assets/x.png" id="23_j8jky"]
+
+[node name="main" type="Node2D" unique_id=1300920803]
+
+[node name="back" type="TextureRect" parent="." unique_id=1614240972]
+offset_left = -250.00003
+offset_top = -100.000015
+offset_right = 1750.0
+offset_bottom = 1900.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_o5qli")
+
+[node name="skipButton" type="TextureButton" parent="." unique_id=1219037707]
+offset_left = 320.0
+offset_top = 670.0
+offset_right = 1016.0
+offset_bottom = 1120.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("2_choun")
+texture_pressed = ExtResource("3_ya4ey")
+texture_hover = ExtResource("4_eb6dy")
+
+[node name="pauseButton" type="TextureButton" parent="." unique_id=26864407]
+offset_left = 178.99998
+offset_top = 670.0
+offset_right = 883.0
+offset_bottom = 1120.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("5_trceg")
+texture_pressed = ExtResource("6_a8y0u")
+texture_hover = ExtResource("7_jkv2x")
+
+[node name="backButton" type="TextureButton" parent="." unique_id=1707781359]
+offset_left = 40.000004
+offset_top = 670.0
+offset_right = 736.0
+offset_bottom = 1120.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("8_jbj1t")
+texture_pressed = ExtResource("9_muem4")
+texture_hover = ExtResource("10_dp3eg")
+
+[node name="leftButton" type="TextureButton" parent="." unique_id=1624809535]
+offset_left = 107.00001
+offset_top = 403.70004
+offset_right = 650.0
+offset_bottom = 1486.7001
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("14_jbj1t")
+texture_pressed = ExtResource("15_muem4")
+texture_hover = ExtResource("16_dp3eg")
+
+[node name="rightButton" type="TextureButton" parent="." unique_id=1935504893]
+offset_left = 296.0
+offset_top = 403.7
+offset_right = 839.0
+offset_bottom = 1486.7
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("14_2wyq8")
+texture_pressed = ExtResource("15_vxglm")
+texture_hover = ExtResource("16_2f3dj")
+
+[node name="upButton" type="TextureButton" parent="." unique_id=6577000]
+offset_left = 154.2
+offset_top = 362.50003
+offset_right = 1172.2
+offset_bottom = 893.5
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("17_yq6so")
+texture_pressed = ExtResource("18_fv21b")
+texture_hover = ExtResource("19_tel4y")
+
+[node name="downButton" type="TextureButton" parent="." unique_id=174984098]
+offset_left = 154.2
+offset_top = 555.00006
+offset_right = 1172.2
+offset_bottom = 1086.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("20_qkpxi")
+texture_pressed = ExtResource("21_5q0nq")
+texture_hover = ExtResource("22_dgi5k")
+
+[node name="xTexture" type="TextureRect" parent="." unique_id=831062655]
+offset_left = 151.99998
+offset_top = 401.99997
+offset_right = 1190.0
+offset_bottom = 1503.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("23_j8jky")
+
+[node name="middleButton" type="TextureButton" parent="." unique_id=1998542503]
+offset_left = 196.0
+offset_top = 452.00003
+offset_right = 796.0
+offset_bottom = 1052.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("11_trceg")
+texture_pressed = ExtResource("12_a8y0u")
+texture_hover = ExtResource("13_jkv2x")
