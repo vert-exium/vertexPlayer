@@ -73,3 +73,15 @@ func add_song_to_playlist(song_path: String, playlist_name: String) -> void:
 			print("Added song to: " + playlist_name)
 		else:
 			print("Song is already in this playlist.")
+
+func remove_song_from_playlist(song_path: String, playlist_name: String) -> void:
+	if playlists.has(playlist_name):
+		playlists[playlist_name].erase(song_path)
+		save_playlists()
+		print("Removed song from: " + playlist_name)
+
+func delete_playlist(playlist_name: String) -> void:
+	if playlists.has(playlist_name):
+		playlists.erase(playlist_name)
+		save_playlists()
+		print("Deleted playlist: " + playlist_name)

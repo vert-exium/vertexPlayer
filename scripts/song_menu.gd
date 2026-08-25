@@ -74,20 +74,26 @@ func _on_song_button_pressed(path: String) -> void:
 	Global.current_index = Global.song_list.find(path)
 	Global.play_song.emit(path)
 
+
 func open_playlist_popup() -> void:
 	playlist_popup.clear()
 	
-	var index = 0
-	for playlist_name in Global.playlists.keys():
-		playlist_popup.add_item(playlist_name, index)
-		playlist_popup.set_item_metadata(index, playlist_name)
-		index += 1
+	playlist_popup.add_separator("Add to playlist:")
 	
-	if playlist_popup.item_count > 0:
+	var id_counter = 1
+	for playlist_name in Global.playlists.keys():
+		playlist_popup.add_item(playlist_name, id_counter)
+		playlist_popup.set_item_metadata(id_counter, playlist_name)
+		id_counter += 1
+	##  ^^^  This part of the function clears the popup list, adds the header, and then for every playlist that exists,
+	## creates an item in the menu that displays the name of the playlist 
+	
+	if playlist_popup.item_count > 1: 
 		playlist_popup.position = get_viewport().get_mouse_position()
 		playlist_popup.popup()
 	else:
-		print("No playlists found!")
+		print("No playlists found! Make one first")
+
 
 func _on_playlist_popup_id_pressed(id: int) -> void:
 	var playlist_name = playlist_popup.get_item_metadata(id)

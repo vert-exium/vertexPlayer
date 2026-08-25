@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cyj7301efrabb" path="res://scripts/home_button.gd" id="6_c03b0"]
 [ext_resource type="Texture2D" uid="uid://pwys1kalend3" path="res://assets/homeIcon.png" id="7_a0wjr"]
 [ext_resource type="Texture2D" uid="uid://dhe2ic6673sce" path="res://assets/plusIcon.png" id="8_g23tu"]
+[ext_resource type="Texture2D" uid="uid://cx45plbhorswo" path="res://assets/songIcon.png" id="10_u0p8r"]
 
 [node name="playlistMenu" type="Node2D" unique_id=2133010042]
 script = ExtResource("1_m1516")
@@ -117,6 +118,110 @@ visible = false
 position = Vector2(0, -1)
 points = PackedVector2Array(213, 0, 213, -48)
 width = 1.0
+
+[node name="detailsControl" type="Control" parent="." unique_id=622047237]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 426.0
+offset_bottom = 326.0
+
+[node name="ColorRect" type="ColorRect" parent="detailsControl" unique_id=1894400233]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 416.0
+offset_bottom = 80.0
+color = Color(0.65882355, 0.65882355, 0.65882355, 0.60784316)
+
+[node name="playlistTitleLabel" type="Label" parent="detailsControl" unique_id=430368385]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 11.0
+offset_right = 408.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Playlist Title"
+horizontal_alignment = 1
+
+[node name="playPlaylist" type="Button" parent="detailsControl" unique_id=288107937]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 40.0
+offset_right = 61.0
+offset_bottom = 71.0
+text = "Play "
+
+[node name="deletePlaylist" type="Button" parent="detailsControl" unique_id=1388798398]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 40.0
+offset_right = 407.0
+offset_bottom = 71.0
+text = "Delete Playlist !!!"
+
+[node name="backToPlaylists" type="Button" parent="detailsControl" unique_id=1343739252]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 109.0
+offset_bottom = 71.0
+text = "Back"
+
+[node name="songListScroll" type="ScrollContainer" parent="detailsControl" unique_id=1680923288]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 416.0
+offset_bottom = 320.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="detailsControl/songListScroll" unique_id=1897566451]
+layout_mode = 2
+
+[node name="songTemplate" type="TextureButton" parent="detailsControl/songListScroll/VBoxContainer" unique_id=108962687]
+layout_mode = 2
+texture_normal = ExtResource("2_m1516")
+texture_pressed = ExtResource("3_u0p8r")
+texture_hover = ExtResource("4_hd3gs")
+
+[node name="icon" type="TextureRect" parent="detailsControl/songListScroll/VBoxContainer/songTemplate" unique_id=1505792611]
+custom_minimum_size = Vector2(113, 113)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_u0p8r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="songNameLabel" type="Label" parent="detailsControl/songListScroll/VBoxContainer/songTemplate" unique_id=874018444]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 7.0
+offset_right = 307.0
+offset_bottom = 30.0
+theme_override_constants/outline_size = 5
+text = "Song 1"
+
+[node name="artistLabel" type="Label" parent="detailsControl/songListScroll/VBoxContainer/songTemplate" unique_id=877325447]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 31.0
+offset_right = 307.0
+offset_bottom = 45.0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "Artist 1"
+
+[node name="removeSongButton" type="Button" parent="detailsControl/songListScroll/VBoxContainer/songTemplate" unique_id=1790511909]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 8.0
+offset_right = 391.0
+offset_bottom = 48.0
+text = "Remove"
 
 [connection signal="pressed" from="homeButton" to="homeButton" method="_on_pressed"]
 [connection signal="pressed" from="addPlaylistButton" to="addPlaylistButton" method="_on_pressed"]
