@@ -17,3 +17,7 @@ func _on_option_button_2_pressed() -> void:
 
 func _on_option_button_1_pressed() -> void:
 	Global.openArtistsMenu.emit()
+
+
+func _on_option_button_3_pressed() -> void:
+	Global.openPlaylistMenu.emit()

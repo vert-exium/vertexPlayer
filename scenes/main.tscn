@@ -41,10 +41,96 @@
 [ext_resource type="PackedScene" uid="uid://dgx52m3fiqkda" path="res://scenes/play_bar.tscn" id="37_fuf3a"]
 [ext_resource type="PackedScene" uid="uid://cyqi20kbnqtc8" path="res://scenes/song_menu.tscn" id="38_5he1u"]
 [ext_resource type="PackedScene" uid="uid://bap6jsn17bu0" path="res://scenes/artists_menu.tscn" id="41_5poiv"]
-[ext_resource type="AudioStream" uid="uid://bctjuxywa1s8l" path="res://audio/imported/FADE.mp3" id="42_2cjbq"]
+[ext_resource type="PackedScene" uid="uid://byayc3lyfufgk" path="res://scenes/playlist_menu.tscn" id="41_txyw0"]
+[ext_resource type="Texture2D" uid="uid://dwd5j1t3xkba0" path="res://assets/bar2/back.png" id="42_cjqg0"]
+[ext_resource type="Texture2D" uid="uid://ctbjuxhoavj2j" path="res://assets/bar2/over.png" id="43_vchkt"]
+[ext_resource type="Texture2D" uid="uid://dgtglp5ykdkef" path="res://assets/bar2/fill.png" id="44_txyw0"]
+[ext_resource type="Script" uid="uid://bt0rj7t3km3v0" path="res://scripts/song_progress_bar.gd" id="45_vchkt"]
 
 [node name="main" type="Node2D" unique_id=1300920803]
 script = ExtResource("1_c6pm6")
+
+[node name="notNeeded" type="Control" parent="." unique_id=227309794]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="leftButton" type="TextureButton" parent="notNeeded" unique_id=1624809535]
+visible = false
+layout_mode = 0
+offset_left = 107.0
+offset_top = 756.7
+offset_right = 650.0
+offset_bottom = 1839.7
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("14_jbj1t")
+texture_pressed = ExtResource("15_muem4")
+texture_hover = ExtResource("16_dp3eg")
+texture_click_mask = ExtResource("17_j8jky")
+
+[node name="rightButton" type="TextureButton" parent="notNeeded" unique_id=1935504893]
+visible = false
+layout_mode = 0
+offset_left = 296.0
+offset_top = 756.7
+offset_right = 839.0
+offset_bottom = 1839.7
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("14_2wyq8")
+texture_pressed = ExtResource("15_vxglm")
+texture_hover = ExtResource("16_2f3dj")
+texture_click_mask = ExtResource("21_kmb1v")
+
+[node name="upButton" type="TextureButton" parent="notNeeded" unique_id=6577000]
+visible = false
+layout_mode = 0
+offset_left = 154.19998
+offset_top = 715.50006
+offset_right = 1172.2
+offset_bottom = 1246.5
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("17_yq6so")
+texture_pressed = ExtResource("18_fv21b")
+texture_hover = ExtResource("19_tel4y")
+texture_click_mask = ExtResource("25_fuf3a")
+
+[node name="downButton" type="TextureButton" parent="notNeeded" unique_id=174984098]
+visible = false
+layout_mode = 0
+offset_left = 154.19998
+offset_top = 908.00006
+offset_right = 1172.2
+offset_bottom = 1439.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("20_qkpxi")
+texture_pressed = ExtResource("21_5q0nq")
+texture_hover = ExtResource("22_dgi5k")
+texture_click_mask = ExtResource("24_2f3dj")
+
+[node name="xTexture" type="TextureRect" parent="notNeeded" unique_id=831062655]
+visible = false
+layout_mode = 0
+offset_left = 151.99997
+offset_top = 755.00006
+offset_right = 1190.0
+offset_bottom = 1856.0
+scale = Vector2(0.2, 0.2)
+mouse_filter = 2
+texture = ExtResource("23_j8jky")
+
+[node name="middleButton" type="TextureButton" parent="notNeeded" unique_id=1998542503]
+visible = false
+layout_mode = 0
+offset_left = 196.0
+offset_top = 805.00006
+offset_right = 796.0
+offset_bottom = 1405.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("11_trceg")
+texture_pressed = ExtResource("12_a8y0u")
+texture_hover = ExtResource("13_jkv2x")
+texture_click_mask = ExtResource("34_dgi5k")
 
 [node name="back" type="TextureRect" parent="." unique_id=1614240972]
 self_modulate = Color(0.98432404, 0.5559076, 0.26756448, 1)
@@ -86,76 +172,6 @@ texture_pressed = ExtResource("9_muem4")
 texture_hover = ExtResource("10_dp3eg")
 texture_click_mask = ExtResource("11_vxglm")
 
-[node name="leftButton" type="TextureButton" parent="." unique_id=1624809535]
-visible = false
-offset_left = 107.0
-offset_top = 419.7001
-offset_right = 650.0
-offset_bottom = 1502.7001
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("14_jbj1t")
-texture_pressed = ExtResource("15_muem4")
-texture_hover = ExtResource("16_dp3eg")
-texture_click_mask = ExtResource("17_j8jky")
-
-[node name="rightButton" type="TextureButton" parent="." unique_id=1935504893]
-visible = false
-offset_left = 296.0
-offset_top = 419.69998
-offset_right = 839.0
-offset_bottom = 1502.7
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("14_2wyq8")
-texture_pressed = ExtResource("15_vxglm")
-texture_hover = ExtResource("16_2f3dj")
-texture_click_mask = ExtResource("21_kmb1v")
-
-[node name="upButton" type="TextureButton" parent="." unique_id=6577000]
-visible = false
-offset_left = 154.2
-offset_top = 378.50003
-offset_right = 1172.2
-offset_bottom = 909.5
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("17_yq6so")
-texture_pressed = ExtResource("18_fv21b")
-texture_hover = ExtResource("19_tel4y")
-texture_click_mask = ExtResource("25_fuf3a")
-
-[node name="downButton" type="TextureButton" parent="." unique_id=174984098]
-visible = false
-offset_left = 154.2
-offset_top = 571.0
-offset_right = 1172.2
-offset_bottom = 1102.0
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("20_qkpxi")
-texture_pressed = ExtResource("21_5q0nq")
-texture_hover = ExtResource("22_dgi5k")
-texture_click_mask = ExtResource("24_2f3dj")
-
-[node name="xTexture" type="TextureRect" parent="." unique_id=831062655]
-visible = false
-offset_left = 151.99998
-offset_top = 418.00003
-offset_right = 1190.0
-offset_bottom = 1519.0
-scale = Vector2(0.2, 0.2)
-mouse_filter = 2
-texture = ExtResource("23_j8jky")
-
-[node name="middleButton" type="TextureButton" parent="." unique_id=1998542503]
-visible = false
-offset_left = 196.0
-offset_top = 468.00003
-offset_right = 796.0
-offset_bottom = 1068.0
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("11_trceg")
-texture_pressed = ExtResource("12_a8y0u")
-texture_hover = ExtResource("13_jkv2x")
-texture_click_mask = ExtResource("34_dgi5k")
-
 [node name="screenBackTexture" type="TextureRect" parent="." unique_id=1560300328]
 offset_left = 25.0
 offset_top = 16.0
@@ -164,24 +180,37 @@ offset_bottom = 1416.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("35_j8jky")
 
+[node name="songProgressBar" type="TextureProgressBar" parent="." unique_id=1848022472 node_paths=PackedStringArray("audio_player")]
+offset_left = 109.5
+offset_top = 343.00003
+offset_right = 3509.5
+offset_bottom = 383.00003
+scale = Vector2(0.1, 0.25)
+step = 0.1
+texture_under = ExtResource("42_cjqg0")
+texture_over = ExtResource("43_vchkt")
+texture_progress = ExtResource("44_txyw0")
+script = ExtResource("45_vchkt")
+audio_player = NodePath("../audioPlayer")
+
 [node name="referenceLine" type="Line2D" parent="." unique_id=1464967214]
 visible = false
 position = Vector2(0, -32)
 points = PackedVector2Array(250, 24, 250, -8)
 width = 1.0
 
-[node name="referenceRect" type="ColorRect" parent="." unique_id=285009757]
-visible = false
-offset_left = 37.0
-offset_top = 28.0
-offset_right = 463.0
-offset_bottom = 354.0
-
-[node name="menuBrowser" parent="." unique_id=1149539733 instance=ExtResource("36_pibwh")]
+[node name="playlistMenu" parent="." unique_id=2133010042 instance=ExtResource("41_txyw0")]
 position = Vector2(37, 28)
 
-[node name="songMenu" parent="." unique_id=2133010042 instance=ExtResource("38_5he1u")]
+[node name="songMenu" parent="." unique_id=870436192 instance=ExtResource("38_5he1u")]
 visible = false
+position = Vector2(37, 28)
+
+[node name="artistsMenu" parent="." unique_id=7582608 instance=ExtResource("41_5poiv")]
+visible = false
+position = Vector2(37, 28)
+
+[node name="menuBrowser" parent="." unique_id=1149539733 instance=ExtResource("36_pibwh")]
 position = Vector2(37, 28)
 
 [node name="playBar" parent="." unique_id=1701627100 instance=ExtResource("37_fuf3a")]
@@ -191,9 +220,11 @@ position = Vector2(37, 290)
 visible = false
 position = Vector2(37, 28)
 
-[node name="artistsMenu" parent="." unique_id=7582608 instance=ExtResource("41_5poiv")]
-visible = false
-position = Vector2(37, 28)
-
 [node name="audioPlayer" type="AudioStreamPlayer" parent="." unique_id=1349753027]
-stream = ExtResource("42_2cjbq")
+
+[node name="bufferTimer" type="Timer" parent="." unique_id=297085182]
+wait_time = 0.5
+
+[connection signal="pressed" from="pauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="finished" from="audioPlayer" to="." method="_on_audio_player_finished"]
+[connection signal="timeout" from="bufferTimer" to="." method="_on_buffer_timer_timeout"]

@@ -29,7 +29,7 @@ layout_mode = 0
 offset_left = 13.0
 offset_top = 72.0
 offset_right = 413.0
-offset_bottom = 313.0
+offset_bottom = 264.0
 
 [node name="verticalBoxCont" type="VBoxContainer" parent="Control/scrollContainer" unique_id=1911375264]
 layout_mode = 2
@@ -58,6 +58,7 @@ offset_left = 59.0
 offset_top = 7.0
 offset_right = 307.0
 offset_bottom = 30.0
+theme_override_constants/outline_size = 5
 text = "Song 1"
 
 [node name="artistLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/optionButton1" unique_id=565614222]
@@ -66,6 +67,7 @@ offset_left = 59.0
 offset_top = 31.0
 offset_right = 307.0
 offset_bottom = 45.0
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 10
 text = "Artist 1"
 
@@ -94,6 +96,7 @@ offset_left = 59.0
 offset_top = 15.0
 offset_right = 307.0
 offset_bottom = 38.0
+theme_override_constants/outline_size = 2
 text = "Home"
 
 [node name="referenceLine" type="Line2D" parent="." unique_id=450330744]

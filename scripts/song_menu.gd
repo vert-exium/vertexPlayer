@@ -6,8 +6,17 @@ extends Node2D
 const AUDIO_DIR = "res://audio/imported/"
 const DEFAULT_COVER = preload("res://assets/songIcon.png")
 
+var playlist_popup: PopupMenu
+var selected_song_path: String = ""
+
+
 func _ready() -> void:
 	template_button.hide()
+	
+	playlist_popup = PopupMenu.new()
+	add_child(playlist_popup)
+	playlist_popup.id_pressed.connect(_on_playlist_popup_id_pressed)
+	
 	load_songs_from_directory()
 
 func load_songs_from_directory() -> void:
@@ -26,6 +35,10 @@ func create_song_button(file_path: String) -> void:
 	var audio_stream: AudioStream = load(file_path)
 	if not audio_stream:
 		return
+		
+	# Register song into the global playlist
+	if not file_path in Global.song_list:
+		Global.song_list.append(file_path)
 		
 	var metadata := MusicMetadata.new(audio_stream)
 	
@@ -52,7 +65,35 @@ func create_song_button(file_path: String) -> void:
 		icon_rect.texture = DEFAULT_COVER
 		
 	new_button.pressed.connect(_on_song_button_pressed.bind(file_path))
+	
+	new_button.gui_input.connect(_on_song_button_gui_input.bind(file_path))
+	
 	container.add_child(new_button)
 
 func _on_song_button_pressed(path: String) -> void:
+	Global.current_index = Global.song_list.find(path)
 	Global.play_song.emit(path)
+
+func open_playlist_popup() -> void:
+	playlist_popup.clear()
+	
+	var index = 0
+	for playlist_name in Global.playlists.keys():
+		playlist_popup.add_item(playlist_name, index)
+		playlist_popup.set_item_metadata(index, playlist_name)
+		index += 1
+	
+	if playlist_popup.item_count > 0:
+		playlist_popup.position = get_viewport().get_mouse_position()
+		playlist_popup.popup()
+	else:
+		print("No playlists found!")
+
+func _on_playlist_popup_id_pressed(id: int) -> void:
+	var playlist_name = playlist_popup.get_item_metadata(id)
+	Global.add_song_to_playlist(selected_song_path, playlist_name)
+
+func _on_song_button_gui_input(event: InputEvent, path: String) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+		selected_song_path = path
+		open_playlist_popup()

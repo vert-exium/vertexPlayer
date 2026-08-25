@@ -31,9 +31,9 @@ texture = SubResource("GradientTexture2D_6fyds")
 
 [node name="songLabel" type="Label" parent="." unique_id=631222173]
 offset_left = 72.0
-offset_top = 8.0
+offset_top = 6.0
 offset_right = 256.0
-offset_bottom = 31.0
+offset_bottom = 30.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6fyds")
 theme_override_font_sizes/font_size = 18
@@ -41,9 +41,9 @@ text = "No Song Playing"
 
 [node name="artistLabel" type="Label" parent="." unique_id=914611978]
 offset_left = 72.0
-offset_top = 32.0
+offset_top = 29.0
 offset_right = 416.0
-offset_bottom = 64.0
+offset_bottom = 61.0
 theme_override_colors/font_color = Color(0.25565878, 0.25565878, 0.25565878, 1)
 theme_override_fonts/font = ExtResource("1_6fyds")
 theme_override_font_sizes/font_size = 10

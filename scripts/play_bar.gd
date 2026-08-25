@@ -10,6 +10,7 @@ var current_metadata: MusicMetadata = null
 
 func _ready() -> void:
 	Global.play_song.connect(load_song_metadata)
+	Global.resetPlaying.connect(_resetBar)
 
 func load_song_metadata(mp3_path: String) -> void:
 	var audio_stream: AudioStream = load(mp3_path)
@@ -20,9 +21,11 @@ func load_song_metadata(mp3_path: String) -> void:
 	current_metadata = MusicMetadata.new(audio_stream)
 
 	var title: String = current_metadata.title
-	if not title.is_empty(): song_label.text = title 
+	if not title.is_empty():
+		song_label.text = title
 	else:
-		song_label.text = "Unknown Title"
+		song_label.text = mp3_path.get_file()
+ 
 
 
 	var artist: String = current_metadata.get_most_relevent_artist()
@@ -33,3 +36,10 @@ func load_song_metadata(mp3_path: String) -> void:
 		cover_rect.texture = cover_texture
 	else:
 		cover_rect.texture = DEFAULT_COVER
+
+
+
+func _resetBar():
+	$songLabel.text = "No Song Playing"
+	$artistLabel.text = "No Artist"
+	$coverRect.texture = load("res://assets/songIcon.png")

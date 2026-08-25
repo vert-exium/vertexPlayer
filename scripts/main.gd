@@ -7,6 +7,14 @@ func _ready() -> void:
 	Global.doneLoading.connect(_hideLoading)
 	Global.openSongMenu.connect(_showSongMenu)
 	Global.openArtistsMenu.connect(_showArtistsMenu)
+	Global.play_song.connect(_updateSong)
+	Global.openPlaylistMenu.connect(_showPlaylistMenu)
+	
+	
+	
+	# connects next/previous buttons 
+	$skipButton.pressed.connect(Global.skip_song)
+	$backButton.pressed.connect(Global.previous_song.bind($audioPlayer))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -28,7 +36,33 @@ func _showArtistsMenu():
 	_hide_all()
 	$artistsMenu.visible = true
 
+func _showPlaylistMenu():
+	_hide_all()
+	$playlistMenu.visible = true
+
+
 func _hide_all():
 	$menuBrowser.visible = false
 	$songMenu.visible = false
 	$artistsMenu.visible = false
+	$playlistMenu.visible = false
+
+func _updateSong(path: String):
+	$audioPlayer.stream = load(path)
+	$audioPlayer.play()
+
+func _on_audio_player_finished() -> void:
+	# Automatically move to the next song when the current one ends
+	Global.skip_song()
+
+
+func _on_buffer_timer_timeout() -> void:
+	if not $audioPlayer.playing:
+		Global.resetPlaying.emit()
+
+
+func _on_pause_button_pressed() -> void:
+	if $audioPlayer.stream_paused == true:
+		$audioPlayer.stream_paused = false
+	elif $audioPlayer.stream_paused == false:
+		$audioPlayer.stream_paused = true
