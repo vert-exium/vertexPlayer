@@ -103,3 +103,8 @@ func _on_song_button_gui_input(event: InputEvent, path: String) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 		selected_song_path = path
 		open_playlist_popup()
+
+
+func _on_import_button_pressed() -> void:
+	var audio_path = ProjectSettings.globalize_path("res://audio/imported")
+	OS.shell_open(audio_path)

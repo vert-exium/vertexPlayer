@@ -9,8 +9,8 @@ func _ready() -> void:
 	Global.openArtistsMenu.connect(_showArtistsMenu)
 	Global.play_song.connect(_updateSong)
 	Global.openPlaylistMenu.connect(_showPlaylistMenu)
-	
-	
+	Global.openSettingsMenu.connect(_showSettingsMenu)
+	Global.colorChanged.connect(_updateColor)
 	
 	# connects next/previous buttons 
 	$skipButton.pressed.connect(Global.skip_song)
@@ -46,6 +46,8 @@ func _hide_all():
 	$songMenu.visible = false
 	$artistsMenu.visible = false
 	$playlistMenu.visible = false
+	$settingsMenu.visible = false
+
 
 func _updateSong(path: String):
 	$audioPlayer.stream = load(path)
@@ -66,3 +68,12 @@ func _on_pause_button_pressed() -> void:
 		$audioPlayer.stream_paused = false
 	elif $audioPlayer.stream_paused == false:
 		$audioPlayer.stream_paused = true
+
+func _showSettingsMenu():
+	_hide_all()
+	$settingsMenu.show()
+
+func _updateColor():
+	$back.self_modulate.v = Global.value
+	$back.self_modulate.s = Global.saturation
+	$back.self_modulate.h = Global.hue

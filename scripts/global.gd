@@ -9,8 +9,12 @@ signal openArtistsMenu
 signal play_song(path: String)
 signal resetPlaying
 signal openPlaylistMenu
+signal openSettingsMenu
+signal colorChanged
 
-
+var hue: float
+var saturation: float
+var value: float
 var song_list: Array[String] = []
 var song_queue: Array[String] = []
 var current_index: int = 0
@@ -37,7 +41,7 @@ func add_to_queue(path: String) -> void:
 	song_queue.push_back(path)
 
 func _ready() -> void:
-	load_playlists
+	load_playlists()
 
 func save_playlists() -> void:
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -79,9 +83,44 @@ func remove_song_from_playlist(song_path: String, playlist_name: String) -> void
 		playlists[playlist_name].erase(song_path)
 		save_playlists()
 		print("Removed song from: " + playlist_name)
+		
+		while song_queue.has(song_path):
+			song_queue.erase(song_path)
+		
+		if song_list.has(song_path):
+			var removed_index = song_list.find(song_path)
+			song_list.erase(song_path)
+			
+			if removed_index < current_index and current_index > 0:
+				current_index -= 1
 
 func delete_playlist(playlist_name: String) -> void:
 	if playlists.has(playlist_name):
 		playlists.erase(playlist_name)
 		save_playlists()
 		print("Deleted playlist: " + playlist_name)
+		song_queue.clear()
+		song_list.clear()
+
+func play_song_from_playlist(playlist_name: String, song_path: String) -> void:
+	if playlists.has(playlist_name):
+		song_list.assign(playlists[playlist_name])
+		
+		current_index = song_list.find(song_path)
+		if current_index == -1:
+			current_index = 0
+		song_queue.clear()
+		play_song.emit(song_list[current_index])
+
+func rename_playlist(old_name: String, new_name: String) -> bool:
+	if old_name == new_name or playlists.has(new_name):
+		return false
+	
+	if playlists.has(old_name):
+		playlists[new_name] = playlists[old_name]
+		playlists.erase(old_name)
+		save_playlists()
+		print("Renamed playlist to: " + new_name)
+		return true
+	
+	return false

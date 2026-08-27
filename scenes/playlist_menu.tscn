@@ -7,9 +7,35 @@
 [ext_resource type="Texture2D" uid="uid://cu6vf4kb2u876" path="res://assets/buttons/bar/hovered.png" id="4_hd3gs"]
 [ext_resource type="Texture2D" uid="uid://byhm7cu3csbl4" path="res://assets/playlistIcon.png" id="5_txecx"]
 [ext_resource type="Script" uid="uid://cyj7301efrabb" path="res://scripts/home_button.gd" id="6_c03b0"]
+[ext_resource type="Texture2D" uid="uid://bw1m80rodvdu8" path="res://assets/buttons/quickDelete/normal.png" id="7_1or2d"]
 [ext_resource type="Texture2D" uid="uid://pwys1kalend3" path="res://assets/homeIcon.png" id="7_a0wjr"]
 [ext_resource type="Texture2D" uid="uid://dhe2ic6673sce" path="res://assets/plusIcon.png" id="8_g23tu"]
+[ext_resource type="Texture2D" uid="uid://d30nvhdcfp7aq" path="res://assets/buttons/quickDelete/hovered.png" id="8_k8gh1"]
+[ext_resource type="BitMap" uid="uid://c10sxfnenwiy0" path="res://assets/buttons/quickDelete/clickMask.png" id="9_n31b1"]
+[ext_resource type="Texture2D" uid="uid://cc8k2vp6wk7t5" path="res://assets/buttons/play/normal.png" id="10_a0wjr"]
+[ext_resource type="FontFile" uid="uid://boj8m8wa8e41" path="res://assets/fonts/Elms_Sans/static/ElmsSans-Regular.ttf" id="10_fqrnb"]
+[ext_resource type="Texture2D" uid="uid://bb30dbhe5xk4f" path="res://assets/buttons/edit/normal.png" id="10_k4tdd"]
 [ext_resource type="Texture2D" uid="uid://cx45plbhorswo" path="res://assets/songIcon.png" id="10_u0p8r"]
+[ext_resource type="Texture2D" uid="uid://dfy0jmsccjvq3" path="res://assets/buttons/play/pressed.png" id="11_g23tu"]
+[ext_resource type="Texture2D" uid="uid://dx8ube0gec33w" path="res://assets/buttons/edit/pressed.png" id="11_gwm1r"]
+[ext_resource type="Texture2D" uid="uid://cw1k5lpfqom57" path="res://assets/buttons/play/hovered.png" id="12_fqwwt"]
+[ext_resource type="Texture2D" uid="uid://b57ekau4a6dab" path="res://assets/buttons/edit/hovered.png" id="12_vqqud"]
+[ext_resource type="BitMap" uid="uid://co4slnyjyxeo4" path="res://assets/buttons/play/clickMask.png" id="13_0uquq"]
+[ext_resource type="Texture2D" uid="uid://bvspyq8trgdta" path="res://assets/buttons/edit/disabled.png" id="13_qvnqd"]
+[ext_resource type="BitMap" uid="uid://xw8pp45aoklf" path="res://assets/buttons/edit/clickMask.png" id="14_dhs18"]
+[ext_resource type="Texture2D" uid="uid://bd35vuftxfoam" path="res://assets/buttons/delete/normal.png" id="14_uo5pk"]
+[ext_resource type="Texture2D" uid="uid://ddj4tv7v5j5ka" path="res://assets/buttons/confirm/normal.png" id="15_dhs18"]
+[ext_resource type="Texture2D" uid="uid://owleuvrj7klb" path="res://assets/buttons/delete/pressed.png" id="15_rcvw5"]
+[ext_resource type="Texture2D" uid="uid://cxa1ufqf2li40" path="res://assets/buttons/delete/hovered.png" id="16_8wwoj"]
+[ext_resource type="StyleBox" uid="uid://cec36445wih5v" path="res://assets/styles/playlistTitleEdit/default_stylebox.tres" id="16_f7bij"]
+[ext_resource type="Texture2D" uid="uid://b8a84fgwv5a37" path="res://assets/buttons/confirm/pressed.png" id="16_schgr"]
+[ext_resource type="Texture2D" uid="uid://b36svu3cvij0w" path="res://assets/buttons/confirm/hovered.png" id="17_1or2d"]
+[ext_resource type="BitMap" uid="uid://bfkk3mh2f3a5n" path="res://assets/buttons/delete/clickMask.png" id="17_s6jy1"]
+[ext_resource type="Texture2D" uid="uid://oasscrypc5bs" path="res://assets/buttons/backPlaylist/normal.png" id="18_ixytv"]
+[ext_resource type="BitMap" uid="uid://7rapeoqkmtlt" path="res://assets/buttons/confirm/clickMask.png" id="18_k8gh1"]
+[ext_resource type="Texture2D" uid="uid://iy3vk4unyo52" path="res://assets/buttons/backPlaylist/pressed.png" id="19_fqrnb"]
+[ext_resource type="Texture2D" uid="uid://ba3627hli8dlg" path="res://assets/buttons/backPlaylist/hovered.png" id="20_37tgi"]
+[ext_resource type="BitMap" uid="uid://ckivcofs0fu5y" path="res://assets/buttons/backPlaylist/clickMask.png" id="21_5xgh6"]
 
 [node name="playlistMenu" type="Node2D" unique_id=2133010042]
 script = ExtResource("1_m1516")
@@ -58,6 +84,17 @@ offset_top = 15.0
 offset_right = 307.0
 offset_bottom = 38.0
 text = "Playlist 1"
+
+[node name="quickDeleteButton" type="TextureButton" parent="Control/scrollContainer/verticalBoxCont/optionButton1" unique_id=1286945487]
+layout_mode = 0
+offset_left = 357.99994
+offset_top = 11.0
+offset_right = 453.99994
+offset_bottom = 107.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_1or2d")
+texture_hover = ExtResource("8_k8gh1")
+texture_click_mask = ExtResource("9_n31b1")
 
 [node name="homeButton" type="TextureButton" parent="." unique_id=725129755]
 offset_left = 13.0
@@ -120,7 +157,6 @@ points = PackedVector2Array(213, 0, 213, -48)
 width = 1.0
 
 [node name="detailsControl" type="Control" parent="." unique_id=622047237]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 426.0
@@ -128,52 +164,96 @@ offset_bottom = 326.0
 
 [node name="ColorRect" type="ColorRect" parent="detailsControl" unique_id=1894400233]
 layout_mode = 0
-offset_left = 16.0
+offset_left = 13.0
 offset_top = 8.0
 offset_right = 416.0
-offset_bottom = 80.0
+offset_bottom = 72.0
 color = Color(0.65882355, 0.65882355, 0.65882355, 0.60784316)
 
-[node name="playlistTitleLabel" type="Label" parent="detailsControl" unique_id=430368385]
+[node name="editButton" type="TextureButton" parent="detailsControl" unique_id=1434641189]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 11.0
-offset_right = 408.0
-offset_bottom = 59.0
+offset_left = 336.0
+offset_top = 18.0
+offset_right = 432.0
+offset_bottom = 114.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("10_k4tdd")
+texture_pressed = ExtResource("11_gwm1r")
+texture_hover = ExtResource("12_vqqud")
+texture_disabled = ExtResource("13_qvnqd")
+texture_click_mask = ExtResource("14_dhs18")
+
+[node name="confirmButton" type="TextureButton" parent="detailsControl" unique_id=1232113614]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 16.0
+offset_right = 431.0
+offset_bottom = 112.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("15_dhs18")
+texture_pressed = ExtResource("16_schgr")
+texture_hover = ExtResource("17_1or2d")
+texture_click_mask = ExtResource("18_k8gh1")
+
+[node name="playlistTitleLabel" type="LineEdit" parent="detailsControl" unique_id=1544822938]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 16.0
+offset_right = 336.0
+offset_bottom = 47.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0.83246285, 0.42692208, 0.25714663, 1)
+theme_override_fonts/font = ExtResource("10_fqrnb")
+theme_override_styles/normal = ExtResource("16_f7bij")
+theme_override_styles/read_only = ExtResource("16_f7bij")
+theme_override_styles/focus = ExtResource("16_f7bij")
 text = "Playlist Title"
-horizontal_alignment = 1
+alignment = 1
+editable = false
 
-[node name="playPlaylist" type="Button" parent="detailsControl" unique_id=288107937]
+[node name="playPlaylist" type="TextureButton" parent="detailsControl" unique_id=1231608116]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 40.0
-offset_right = 61.0
-offset_bottom = 71.0
-text = "Play "
+offset_top = 16.0
+offset_right = 112.0
+offset_bottom = 112.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("10_a0wjr")
+texture_pressed = ExtResource("11_g23tu")
+texture_hover = ExtResource("12_fqwwt")
+texture_click_mask = ExtResource("13_0uquq")
 
-[node name="deletePlaylist" type="Button" parent="detailsControl" unique_id=1388798398]
+[node name="deletePlaylist" type="TextureButton" parent="detailsControl" unique_id=702510956]
 layout_mode = 0
-offset_left = 272.0
-offset_top = 40.0
-offset_right = 407.0
-offset_bottom = 71.0
-text = "Delete Playlist !!!"
+offset_left = 360.0
+offset_top = 16.0
+offset_right = 456.0
+offset_bottom = 112.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("14_uo5pk")
+texture_pressed = ExtResource("15_rcvw5")
+texture_hover = ExtResource("16_8wwoj")
+texture_click_mask = ExtResource("17_s6jy1")
 
-[node name="backToPlaylists" type="Button" parent="detailsControl" unique_id=1343739252]
+[node name="backToPlaylists" type="TextureButton" parent="detailsControl" unique_id=1669219253]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 40.0
-offset_right = 109.0
-offset_bottom = 71.0
-text = "Back"
+offset_left = 73.0
+offset_top = 32.0
+offset_right = 193.0
+offset_bottom = 128.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("18_ixytv")
+texture_pressed = ExtResource("19_fqrnb")
+texture_hover = ExtResource("20_37tgi")
+texture_click_mask = ExtResource("21_5xgh6")
 
 [node name="songListScroll" type="ScrollContainer" parent="detailsControl" unique_id=1680923288]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 80.0
 offset_right = 416.0
-offset_bottom = 320.0
+offset_bottom = 256.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="detailsControl/songListScroll" unique_id=1897566451]
 layout_mode = 2
@@ -223,5 +303,12 @@ offset_right = 391.0
 offset_bottom = 48.0
 text = "Remove"
 
+[node name="addSongsButton" type="Button" parent="detailsControl" unique_id=512051871]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 80.0
+offset_right = 266.0
+offset_bottom = 111.0
+text = "Add Songs"
+
 [connection signal="pressed" from="homeButton" to="homeButton" method="_on_pressed"]
-[connection signal="pressed" from="addPlaylistButton" to="addPlaylistButton" method="_on_pressed"]

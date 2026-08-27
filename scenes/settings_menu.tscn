@@ -1,0 +1,262 @@
+[gd_scene format=3 uid="uid://bbuxjo4cyyka2"]
+
+[ext_resource type="Script" uid="uid://ccdebpmyutas2" path="res://scripts/settings_menu.gd" id="1_fb6cq"]
+[ext_resource type="Texture2D" uid="uid://5w1tfythtfnd" path="res://assets/gradients/generalBack.tres" id="2_2ctot"]
+[ext_resource type="Texture2D" uid="uid://eohqwb241oer" path="res://assets/buttons/bar/normal.png" id="3_jrqig"]
+[ext_resource type="FontFile" uid="uid://5vveffntp4pu" path="res://assets/fonts/Elms_Sans/static/ElmsSans-Medium.ttf" id="3_n0fy7"]
+[ext_resource type="FontFile" uid="uid://dyif112k11cwl" path="res://assets/fonts/Elms_Sans/static/ElmsSans-Bold.ttf" id="4_jpbdv"]
+[ext_resource type="Texture2D" uid="uid://c1p6tm8kq56gr" path="res://assets/buttons/bar/pressed.png" id="4_n0fy7"]
+[ext_resource type="Texture2D" uid="uid://cu6vf4kb2u876" path="res://assets/buttons/bar/hovered.png" id="5_jpbdv"]
+[ext_resource type="FontFile" uid="uid://cvlh806lqelfs" path="res://assets/fonts/Elms_Sans/static/ElmsSans-Light.ttf" id="5_puhno"]
+[ext_resource type="Texture2D" uid="uid://blg2ejipiirui" path="res://assets/artistIcon.png" id="6_puhno"]
+[ext_resource type="Texture2D" uid="uid://cx45plbhorswo" path="res://assets/songIcon.png" id="7_75x6d"]
+[ext_resource type="Script" uid="uid://cyj7301efrabb" path="res://scripts/home_button.gd" id="8_x0dr5"]
+[ext_resource type="Texture2D" uid="uid://pwys1kalend3" path="res://assets/homeIcon.png" id="9_gdgfw"]
+
+[node name="settingsMenu" type="Node2D" unique_id=2133010042]
+script = ExtResource("1_fb6cq")
+
+[node name="back" type="TextureRect" parent="." unique_id=1143867301]
+offset_right = 426.0
+offset_bottom = 326.0
+texture = ExtResource("2_2ctot")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="." unique_id=2037143252]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 426.0
+offset_bottom = 326.0
+
+[node name="scrollContainer" type="ScrollContainer" parent="Control" unique_id=1996721943]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 72.0
+offset_right = 413.0
+offset_bottom = 256.0
+
+[node name="verticalBoxCont" type="VBoxContainer" parent="Control/scrollContainer" unique_id=1911375264]
+layout_mode = 2
+
+[node name="colorPanel" type="Panel" parent="Control/scrollContainer/verticalBoxCont" unique_id=1890509778]
+custom_minimum_size = Vector2(400, 210)
+layout_mode = 2
+
+[node name="hueSlider" type="HSlider" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=1318725553]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 40.0
+offset_right = 387.0
+offset_bottom = 56.0
+max_value = 1.0
+step = 0.003
+
+[node name="saturationSlider" type="HSlider" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=1909191026]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 104.0
+offset_right = 387.0
+offset_bottom = 120.0
+max_value = 1.0
+step = 0.002
+
+[node name="valueSlider" type="HSlider" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=785349484]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 168.0
+offset_right = 387.0
+offset_bottom = 184.0
+max_value = 1.0
+step = 0.002
+
+[node name="huePreview" type="TextureRect" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=2120434568]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 24.0
+offset_right = 387.0
+offset_bottom = 40.0
+
+[node name="saturationPreview" type="TextureRect" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=1946699942]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 88.0
+offset_right = 387.0
+offset_bottom = 104.0
+
+[node name="valuePreview" type="TextureRect" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=2077274959]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 152.0
+offset_right = 387.0
+offset_bottom = 168.0
+
+[node name="caseColorLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=1780176862]
+layout_mode = 0
+offset_left = 145.0
+offset_right = 254.0
+offset_bottom = 23.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_n0fy7")
+text = "Case Color"
+horizontal_alignment = 1
+
+[node name="hueLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=1030228883]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 56.0
+offset_right = 306.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("4_jpbdv")
+text = "Hue"
+horizontal_alignment = 1
+
+[node name="hueValLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=2028649755]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 34.0
+offset_right = 77.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("5_puhno")
+text = "Value"
+horizontal_alignment = 1
+
+[node name="satValLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=1094511682]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 98.0
+offset_right = 77.0
+offset_bottom = 121.0
+theme_override_fonts/font = ExtResource("5_puhno")
+text = "Value"
+horizontal_alignment = 1
+
+[node name="valValLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=1840339111]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 162.0
+offset_right = 77.0
+offset_bottom = 185.0
+theme_override_fonts/font = ExtResource("5_puhno")
+text = "Value"
+horizontal_alignment = 1
+
+[node name="satLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=1108863432]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 120.0
+offset_right = 307.0
+offset_bottom = 143.0
+theme_override_fonts/font = ExtResource("4_jpbdv")
+text = "Saturation"
+horizontal_alignment = 1
+
+[node name="valLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/colorPanel" unique_id=1771680966]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 181.0
+offset_right = 299.0
+offset_bottom = 204.0
+theme_override_fonts/font = ExtResource("4_jpbdv")
+text = "Value"
+horizontal_alignment = 1
+
+[node name="optionButton1" type="TextureButton" parent="Control/scrollContainer/verticalBoxCont" unique_id=961226290]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("3_jrqig")
+texture_pressed = ExtResource("4_n0fy7")
+texture_hover = ExtResource("5_jpbdv")
+
+[node name="icon" type="TextureRect" parent="Control/scrollContainer/verticalBoxCont/optionButton1" unique_id=1488224426]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_puhno")
+
+[node name="optionLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/optionButton1" unique_id=1187592675]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 15.0
+offset_right = 307.0
+offset_bottom = 38.0
+text = "Example for a scrollable list!"
+
+[node name="optionButton2" type="TextureButton" parent="Control/scrollContainer/verticalBoxCont" unique_id=1342942750]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("3_jrqig")
+texture_pressed = ExtResource("4_n0fy7")
+texture_hover = ExtResource("5_jpbdv")
+
+[node name="icon" type="TextureRect" parent="Control/scrollContainer/verticalBoxCont/optionButton2" unique_id=228494303]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_75x6d")
+
+[node name="optionLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/optionButton2" unique_id=1744172132]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 15.0
+offset_right = 307.0
+offset_bottom = 38.0
+text = "Songs"
+
+[node name="homeButton" type="TextureButton" parent="." unique_id=725129755]
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 413.0
+offset_bottom = 68.0
+texture_normal = ExtResource("3_jrqig")
+texture_pressed = ExtResource("4_n0fy7")
+texture_hover = ExtResource("5_jpbdv")
+script = ExtResource("8_x0dr5")
+
+[node name="icon" type="TextureRect" parent="homeButton" unique_id=1105058230]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 50.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_gdgfw")
+
+[node name="optionLabel" type="Label" parent="homeButton" unique_id=2001404624]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 15.0
+offset_right = 307.0
+offset_bottom = 38.0
+text = "Home"
+
+[node name="referenceLine" type="Line2D" parent="." unique_id=450330744]
+visible = false
+position = Vector2(0, -1)
+points = PackedVector2Array(213, 0, 213, -48)
+width = 1.0
+
+[node name="headerPanel" type="Panel" parent="." unique_id=801654738]
+offset_left = 13.0
+offset_top = 2.0
+offset_right = 413.0
+offset_bottom = 10.0
+
+[node name="headerLabel" type="Label" parent="headerPanel" unique_id=1045430698]
+layout_mode = 0
+offset_left = 163.0
+offset_top = -2.0
+offset_right = 237.0
+offset_bottom = 16.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 7
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="homeButton" to="homeButton" method="_on_pressed"]

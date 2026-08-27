@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://blg2ejipiirui" path="res://assets/artistIcon.png" id="5_5qqw2"]
 [ext_resource type="Texture2D" uid="uid://cx45plbhorswo" path="res://assets/songIcon.png" id="6_ietes"]
 [ext_resource type="Texture2D" uid="uid://byhm7cu3csbl4" path="res://assets/playlistIcon.png" id="8_yccec"]
+[ext_resource type="Texture2D" uid="uid://rgnu3d3houk5" path="res://assets/buttons/settings/normal.png" id="9_f3nvr"]
 
 [node name="menuBrowser" type="Node2D" unique_id=1149539733]
 script = ExtResource("1_ietes")
@@ -109,6 +110,30 @@ offset_right = 307.0
 offset_bottom = 38.0
 text = "Playlists"
 
+[node name="optionButton4" type="TextureButton" parent="Control/scrollContainer/verticalBoxCont" unique_id=1671443692]
+layout_mode = 2
+texture_normal = ExtResource("2_6s640")
+texture_pressed = ExtResource("3_ywtgi")
+texture_hover = ExtResource("4_6njqw")
+
+[node name="icon" type="TextureRect" parent="Control/scrollContainer/verticalBoxCont/optionButton4" unique_id=643217687]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 9.0
+offset_right = 102.0
+offset_bottom = 105.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_f3nvr")
+
+[node name="optionLabel" type="Label" parent="Control/scrollContainer/verticalBoxCont/optionButton4" unique_id=202622526]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 15.0
+offset_right = 307.0
+offset_bottom = 38.0
+text = "Settings"
+
 [connection signal="pressed" from="Control/scrollContainer/verticalBoxCont/optionButton1" to="." method="_on_option_button_1_pressed"]
 [connection signal="pressed" from="Control/scrollContainer/verticalBoxCont/optionButton2" to="." method="_on_option_button_2_pressed"]
 [connection signal="pressed" from="Control/scrollContainer/verticalBoxCont/optionButton3" to="." method="_on_option_button_3_pressed"]
+[connection signal="pressed" from="Control/scrollContainer/verticalBoxCont/optionButton4" to="." method="_on_option_button_4_pressed"]

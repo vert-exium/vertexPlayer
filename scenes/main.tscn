@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://ct6wqubgrc4ty" path="res://scenes/menu_browser.tscn" id="36_pibwh"]
 [ext_resource type="PackedScene" uid="uid://dgx52m3fiqkda" path="res://scenes/play_bar.tscn" id="37_fuf3a"]
 [ext_resource type="PackedScene" uid="uid://cyqi20kbnqtc8" path="res://scenes/song_menu.tscn" id="38_5he1u"]
+[ext_resource type="PackedScene" uid="uid://bbuxjo4cyyka2" path="res://scenes/settings_menu.tscn" id="40_vc5cj"]
 [ext_resource type="PackedScene" uid="uid://bap6jsn17bu0" path="res://scenes/artists_menu.tscn" id="41_5poiv"]
 [ext_resource type="PackedScene" uid="uid://byayc3lyfufgk" path="res://scenes/playlist_menu.tscn" id="41_txyw0"]
 [ext_resource type="Texture2D" uid="uid://dwd5j1t3xkba0" path="res://assets/bar2/back.png" id="42_cjqg0"]
@@ -53,8 +54,9 @@ script = ExtResource("1_c6pm6")
 [node name="notNeeded" type="Control" parent="." unique_id=227309794]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 704.0
+offset_right = 496.0
+offset_bottom = 1344.0
 
 [node name="leftButton" type="TextureButton" parent="notNeeded" unique_id=1624809535]
 visible = false
@@ -133,7 +135,7 @@ texture_hover = ExtResource("13_jkv2x")
 texture_click_mask = ExtResource("34_dgi5k")
 
 [node name="back" type="TextureRect" parent="." unique_id=1614240972]
-self_modulate = Color(0.98432404, 0.5559076, 0.26756448, 1)
+self_modulate = Color(0.98, 0.55076003, 0.26459998, 1)
 offset_right = 2000.0
 offset_bottom = 3200.0
 scale = Vector2(0.25, 0.2)
@@ -180,19 +182,6 @@ offset_bottom = 1416.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("35_j8jky")
 
-[node name="songProgressBar" type="TextureProgressBar" parent="." unique_id=1848022472 node_paths=PackedStringArray("audio_player")]
-offset_left = 109.5
-offset_top = 343.00003
-offset_right = 3509.5
-offset_bottom = 383.00003
-scale = Vector2(0.1, 0.25)
-step = 0.1
-texture_under = ExtResource("42_cjqg0")
-texture_over = ExtResource("43_vchkt")
-texture_progress = ExtResource("44_txyw0")
-script = ExtResource("45_vchkt")
-audio_player = NodePath("../audioPlayer")
-
 [node name="referenceLine" type="Line2D" parent="." unique_id=1464967214]
 visible = false
 position = Vector2(0, -32)
@@ -210,11 +199,27 @@ position = Vector2(37, 28)
 visible = false
 position = Vector2(37, 28)
 
+[node name="settingsMenu" parent="." unique_id=1294674497 instance=ExtResource("40_vc5cj")]
+position = Vector2(37, 28)
+
 [node name="menuBrowser" parent="." unique_id=1149539733 instance=ExtResource("36_pibwh")]
 position = Vector2(37, 28)
 
 [node name="playBar" parent="." unique_id=1701627100 instance=ExtResource("37_fuf3a")]
 position = Vector2(37, 290)
+
+[node name="songProgressBar" type="TextureProgressBar" parent="." unique_id=1848022472 node_paths=PackedStringArray("audio_player")]
+offset_left = 109.5
+offset_top = 343.00003
+offset_right = 3509.5
+offset_bottom = 383.00003
+scale = Vector2(0.1, 0.25)
+step = 0.1
+texture_under = ExtResource("42_cjqg0")
+texture_over = ExtResource("43_vchkt")
+texture_progress = ExtResource("44_txyw0")
+script = ExtResource("45_vchkt")
+audio_player = NodePath("../audioPlayer")
 
 [node name="bootMenu" parent="." unique_id=1752523285 instance=ExtResource("36_kmb1v")]
 visible = false

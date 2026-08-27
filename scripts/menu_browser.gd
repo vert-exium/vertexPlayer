@@ -21,3 +21,7 @@ func _on_option_button_1_pressed() -> void:
 
 func _on_option_button_3_pressed() -> void:
 	Global.openPlaylistMenu.emit()
+
+
+func _on_option_button_4_pressed() -> void:
+	Global.openSettingsMenu.emit()
