@@ -44,11 +44,30 @@
 [ext_resource type="PackedScene" uid="uid://bap6jsn17bu0" path="res://scenes/artists_menu.tscn" id="41_5poiv"]
 [ext_resource type="PackedScene" uid="uid://byayc3lyfufgk" path="res://scenes/playlist_menu.tscn" id="41_txyw0"]
 [ext_resource type="Texture2D" uid="uid://dwd5j1t3xkba0" path="res://assets/bar2/back.png" id="42_cjqg0"]
+[ext_resource type="PackedScene" uid="uid://b7yihtjt73nud" path="res://scenes/large_playing_menu.tscn" id="43_1v6qk"]
 [ext_resource type="Texture2D" uid="uid://ctbjuxhoavj2j" path="res://assets/bar2/over.png" id="43_vchkt"]
 [ext_resource type="Texture2D" uid="uid://dgtglp5ykdkef" path="res://assets/bar2/fill.png" id="44_txyw0"]
 [ext_resource type="Script" uid="uid://bt0rj7t3km3v0" path="res://scripts/song_progress_bar.gd" id="45_vchkt"]
-[ext_resource type="Texture2D" uid="uid://d12yt20sl4ckw" path="res://assets/buttons/volume/normal.png" id="48_ty1g6"]
-[ext_resource type="Script" uid="uid://dh6sfhjs8vb0a" path="res://scripts/volume_rect.gd" id="49_j2jfr"]
+[ext_resource type="Texture2D" uid="uid://bubgif66qqcf7" path="res://assets/base.png" id="48_j2jfr"]
+[ext_resource type="Texture2D" uid="uid://dotag1iuhns37" path="res://assets/bar.png" id="49_bjg73"]
+[ext_resource type="Script" uid="uid://ip0q3jslyr5" path="res://scripts/base_rect.gd" id="49_bu4jf"]
+[ext_resource type="Texture2D" uid="uid://cwnguwlynl0h8" path="res://assets/audioBar.png" id="51_ids8r"]
+[ext_resource type="Script" uid="uid://c5dno2f7xq1o7" path="res://scripts/vol_bar_left.gd" id="52_dnhof"]
+[ext_resource type="Script" uid="uid://drf7xkgsacdge" path="res://scripts/volBarRight.gd" id="53_1v6qk"]
+[ext_resource type="Texture2D" uid="uid://dxpiw1ele4wj2" path="res://assets/audioBarFront.png" id="53_ids8r"]
+[ext_resource type="Script" uid="uid://1pileg7tywhb" path="res://scripts/oscilliscope.gd" id="54_0loja"]
+[ext_resource type="Texture2D" uid="uid://bkdj4fhwo0ti0" path="res://assets/frame.png" id="56_dnhof"]
+
+[sub_resource type="Gradient" id="Gradient_dnhof"]
+offsets = PackedFloat32Array(0, 0.72727275, 0.8806818, 1)
+colors = PackedColorArray(0, 0.93, 0.108500116, 1, 0.9333333, 1, 0, 1, 0.85, 0.41083336, 0, 1, 0.7, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ivn8x"]
+gradient = SubResource("Gradient_dnhof")
+width = 40
+height = 488
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
 
 [node name="main" type="Node2D" unique_id=1300920803]
 script = ExtResource("1_c6pm6")
@@ -231,17 +250,104 @@ position = Vector2(37, 28)
 [node name="bufferTimer" type="Timer" parent="." unique_id=297085182]
 wait_time = 0.5
 
-[node name="volumeRect" type="TextureRect" parent="." unique_id=1985813809 node_paths=PackedStringArray("audio_player")]
-offset_left = 50.0
-offset_top = 264.0
-offset_right = 450.0
-offset_bottom = 664.0
-rotation = 0.5235988
-scale = Vector2(0.3, 0.3)
-pivot_offset = Vector2(200, 180)
-texture = ExtResource("48_ty1g6")
-script = ExtResource("49_j2jfr")
+[node name="baseRect" type="TextureRect" parent="." unique_id=363992329 node_paths=PackedStringArray("audio_player")]
+offset_left = 394.0
+offset_top = 376.0
+offset_right = 610.0
+offset_bottom = 888.0
+scale = Vector2(0.25, 0.25)
+mouse_filter = 0
+texture = ExtResource("48_j2jfr")
+script = ExtResource("49_bu4jf")
 audio_player = NodePath("../audioPlayer")
+
+[node name="Knob" type="TextureRect" parent="baseRect" unique_id=157341947]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 20.0
+offset_right = 208.0
+offset_bottom = 76.0
+mouse_filter = 2
+texture = ExtResource("49_bjg73")
+
+[node name="barBack" type="TextureRect" parent="." unique_id=1100462492]
+offset_left = 327.0
+offset_top = 376.0
+offset_right = 583.0
+offset_bottom = 888.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("51_ids8r")
+
+[node name="volBarLeft" type="TextureProgressBar" parent="barBack" unique_id=1205392490]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 12.0
+offset_right = 124.0
+offset_bottom = 500.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+fill_mode = 3
+texture_progress = SubResource("GradientTexture2D_ivn8x")
+script = ExtResource("52_dnhof")
+
+[node name="volBarRight" type="TextureProgressBar" parent="barBack" unique_id=149931710]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 12.0
+offset_right = 172.0
+offset_bottom = 500.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+fill_mode = 3
+texture_progress = SubResource("GradientTexture2D_ivn8x")
+script = ExtResource("53_1v6qk")
+
+[node name="barFront" type="TextureRect" parent="barBack" unique_id=1722233031]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("53_ids8r")
+
+[node name="oscilliscope" type="Control" parent="." unique_id=895357039]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 182.0
+offset_top = 378.0
+offset_right = 322.0
+offset_bottom = 418.0
+script = ExtResource("54_0loja")
+
+[node name="back" type="ColorRect" parent="oscilliscope" unique_id=1584695228]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 40.0
+color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+
+[node name="frame" type="TextureRect" parent="oscilliscope" unique_id=1617772504]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 286.0
+offset_bottom = 86.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("56_dnhof")
+
+[node name="screenControl" type="Control" parent="." unique_id=1756027222]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 37.0
+offset_top = 28.0
+offset_right = 463.0
+offset_bottom = 354.0
+mouse_filter = 2
+mouse_behavior_recursive = 2
+
+[node name="largePlayingMenu" parent="screenControl" unique_id=1946543218 instance=ExtResource("43_1v6qk")]
+position = Vector2(0, 326)
 
 [connection signal="pressed" from="pauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="finished" from="audioPlayer" to="." method="_on_audio_player_finished"]

@@ -14,6 +14,22 @@ height = 512
 fill_from = Vector2(0, 0.013043478)
 fill_to = Vector2(0, 1)
 
+[sub_resource type="Gradient" id="Gradient_o8kep"]
+colors = PackedColorArray(0, 0, 0, 0.627451, 0, 0, 0, 0.78431374)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jer5h"]
+gradient = SubResource("Gradient_o8kep")
+width = 426
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_jer5h"]
+colors = PackedColorArray(0, 0, 0, 0.14509805, 0, 0, 0, 0.3019608)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d8fr4"]
+gradient = SubResource("Gradient_jer5h")
+width = 426
+fill_to = Vector2(0, 1)
+
 [node name="playBar" type="Node2D" unique_id=1701627100]
 script = ExtResource("1_jer5h")
 
@@ -58,3 +74,11 @@ offset_right = 56.0
 offset_bottom = 56.0
 expand_mode = 1
 stretch_mode = 6
+
+[node name="wholeButton" type="TextureButton" parent="." unique_id=1282485921]
+offset_right = 426.0
+offset_bottom = 64.0
+texture_pressed = SubResource("GradientTexture2D_jer5h")
+texture_hover = SubResource("GradientTexture2D_d8fr4")
+
+[connection signal="pressed" from="wholeButton" to="." method="_on_whole_button_pressed"]

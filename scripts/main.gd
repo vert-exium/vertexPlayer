@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var largePlayer = $screenControl/largePlayingMenu
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$bootMenu.visible = true
@@ -11,6 +13,8 @@ func _ready() -> void:
 	Global.openPlaylistMenu.connect(_showPlaylistMenu)
 	Global.openSettingsMenu.connect(_showSettingsMenu)
 	Global.colorChanged.connect(_updateColor)
+	Global.openLargePlayer.connect(_openPlay)
+	Global.closeLargePlayer.connect(_closePlay)
 	
 	# connects next/previous buttons 
 	$skipButton.pressed.connect(Global.skip_song)
@@ -77,3 +81,15 @@ func _updateColor():
 	$back.self_modulate.v = Global.value
 	$back.self_modulate.s = Global.saturation
 	$back.self_modulate.h = Global.hue
+
+func _openPlay():
+	var posTween = create_tween()
+	posTween.set_ease(Tween.EASE_OUT)
+	posTween.set_trans(Tween.TRANS_CUBIC)
+	posTween.tween_property(largePlayer, "position:y", 0.0, 0.5)
+
+func _closePlay():
+	var posTween = create_tween()
+	posTween.set_ease(Tween.EASE_OUT)
+	posTween.set_trans(Tween.TRANS_CUBIC)
+	posTween.tween_property(largePlayer, "position:y", 326.0, 0.5)

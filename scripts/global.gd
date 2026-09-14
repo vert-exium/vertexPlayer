@@ -11,6 +11,11 @@ signal resetPlaying
 signal openPlaylistMenu
 signal openSettingsMenu
 signal colorChanged
+signal openLargePlayer
+signal closeLargePlayer
+
+
+
 
 var hue: float
 var saturation: float
@@ -115,12 +120,10 @@ func play_song_from_playlist(playlist_name: String, song_path: String) -> void:
 func rename_playlist(old_name: String, new_name: String) -> bool:
 	if old_name == new_name or playlists.has(new_name):
 		return false
-	
 	if playlists.has(old_name):
 		playlists[new_name] = playlists[old_name]
 		playlists.erase(old_name)
 		save_playlists()
 		print("Renamed playlist to: " + new_name)
 		return true
-	
 	return false

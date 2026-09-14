@@ -43,3 +43,7 @@ func _resetBar():
 	$songLabel.text = "No Song Playing"
 	$artistLabel.text = "No Artist"
 	$coverRect.texture = load("res://assets/songIcon.png")
+
+
+func _on_whole_button_pressed() -> void:
+	Global.emit_signal("openLargePlayer")
