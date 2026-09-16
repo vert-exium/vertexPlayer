@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b7rvm8kwbl4ra" path="res://scripts/large_playing_menu.gd" id="1_psist"]
 [ext_resource type="Texture2D" uid="uid://5w1tfythtfnd" path="res://assets/gradients/generalBack.tres" id="1_wpww5"]
-[ext_resource type="Texture2D" uid="uid://bj11n8g1t2gob" path="res://assets/largePlayer/headerNormal.png" id="3_psist"]
-[ext_resource type="Texture2D" uid="uid://bcpmx73d8fn16" path="res://assets/largePlayer/hoveredHeader.png" id="3_vcf08"]
 [ext_resource type="Texture2D" uid="uid://dfa4y380luuoq" path="res://assets/largePlayer/placeholder.png" id="4_ub7d4"]
 [ext_resource type="FontFile" uid="uid://dyif112k11cwl" path="res://assets/fonts/Elms_Sans/static/ElmsSans-Bold.ttf" id="5_psist"]
 
@@ -32,8 +30,6 @@ width = 1.0
 offset_right = 424.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("3_psist")
-texture_hover = ExtResource("3_vcf08")
 
 [node name="songThumbnail" type="TextureRect" parent="." unique_id=676487280]
 offset_left = 16.0
