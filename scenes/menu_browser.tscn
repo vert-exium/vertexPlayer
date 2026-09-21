@@ -43,6 +43,7 @@ layout_mode = 2
 
 [node name="optionButton1" type="TextureButton" parent="Control/scrollContainer/verticalBoxCont" unique_id=1464540490]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("2_6s640")
 texture_pressed = ExtResource("3_ywtgi")
 texture_hover = ExtResource("4_6njqw")
@@ -132,6 +133,14 @@ offset_top = 15.0
 offset_right = 307.0
 offset_bottom = 38.0
 text = "Settings"
+
+[node name="wipLabel" type="Label" parent="." unique_id=1665006455]
+offset_left = 128.0
+offset_top = 32.0
+offset_right = 393.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 12
+text = "WORK IN PROGRESS! TEMPORARILY DISABLED"
 
 [connection signal="pressed" from="Control/scrollContainer/verticalBoxCont/optionButton1" to="." method="_on_option_button_1_pressed"]
 [connection signal="pressed" from="Control/scrollContainer/verticalBoxCont/optionButton2" to="." method="_on_option_button_2_pressed"]

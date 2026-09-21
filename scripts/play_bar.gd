@@ -13,11 +13,10 @@ func _ready() -> void:
 	Global.resetPlaying.connect(_resetBar)
 
 func load_song_metadata(mp3_path: String) -> void:
-	var audio_stream: AudioStream = load(mp3_path)
+	var audio_stream: AudioStream = Global.load_mp3_from_disk(mp3_path)
 	if not audio_stream:
 		push_error("Failed to load audio stream at path: " + mp3_path)
 		return
-
 	current_metadata = MusicMetadata.new(audio_stream)
 
 	var title: String = current_metadata.title

@@ -1,6 +1,6 @@
 extends TextureProgressBar
 
-@export var audio_player: AudioStreamPlayer
+@export var audio_player: AudioStreamPlayer 
 
 func _process(_delta: float) -> void:
 	if audio_player and audio_player.stream and audio_player.playing:

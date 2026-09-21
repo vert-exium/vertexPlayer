@@ -3,7 +3,7 @@ extends Node2D
 @onready var container = $Control/scrollContainer/verticalBoxCont
 @onready var template_button = $Control/scrollContainer/verticalBoxCont/optionButton1
 
-const AUDIO_DIR = "res://audio/imported/"
+const AUDIO_DIR = "user://audio/imported/"
 const DEFAULT_COVER = preload("res://assets/songIcon.png")
 
 var playlist_popup: PopupMenu
@@ -32,7 +32,7 @@ func load_songs_from_directory() -> void:
 		push_error("An error occurred when trying to access the audio directory.")
 
 func create_song_button(file_path: String) -> void:
-	var audio_stream: AudioStream = load(file_path)
+	var audio_stream = load_mp3_from_disk(file_path)
 	if not audio_stream:
 		return
 		
@@ -106,5 +106,16 @@ func _on_song_button_gui_input(event: InputEvent, path: String) -> void:
 
 
 func _on_import_button_pressed() -> void:
-	var audio_path = ProjectSettings.globalize_path("res://audio/imported")
+	var audio_path = ProjectSettings.globalize_path("user://audio/imported")
 	OS.shell_open(audio_path)
+
+func load_mp3_from_disk(path: String) -> AudioStreamMP3:
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file:
+		var stream = AudioStreamMP3.new()
+		stream.data = file.get_buffer(file.get_length())
+		file.close()
+		return stream
+	
+	print("Could not open file at: ", path)
+	return null

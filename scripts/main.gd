@@ -54,7 +54,7 @@ func _hide_all():
 
 
 func _updateSong(path: String):
-	$audioPlayer.stream = load(path)
+	$audioPlayer.stream = Global.load_mp3_from_disk(path)
 	$audioPlayer.play()
 
 func _on_audio_player_finished() -> void:
